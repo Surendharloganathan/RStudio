@@ -1,0 +1,44 @@
+---
+title: "iono"
+author: "surendhar"
+date: "26/02/2020"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+library(lattice)
+iono=read.csv("C:/Users/Surendhar/Desktop/ionosphere.csv",header=TRUE)
+iono
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r}
+plot(iono$feature7,iono$feature32,col=c(1,2),main='feature 7 vs feature 32')
+abline(lm(iono$feature32~iono$feature7))
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r}
+plot(iono$feature7,iono$feature33,col=c(1,2),main='feature 7 vs feature 32')
+abline(lm(iono$feature33~iono$feature7))
+```
+
+
+```{r}
+plot(iono$feature32,iono$feature33,col=c(1,2),main='feature 7 vs feature 32')
+abline(lm(iono$feature33~iono$feature32))
+```
